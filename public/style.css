@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+  --Firefly: #18202d;
+  --Barlow-Semi-Condensed: "Barlow Semi Condensed", sans-serif;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--Light-grayish-blue);
+  display: grid;
+  place-items: center;
+  font-family: var(--Barlow-Semi-Condensed);
+}
+
+main {
+  width: 1110px;
+  height: 575px;
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  grid-template-rows: 280px 265px;
+  gap: 30px;
+  grid-template-areas:
+    "one one two three"
+    "four five five three";
+}
+main img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.625;
+}
+.div-1 {
+  grid-area: one;
+  background-color: var(--Moderate-violet);
+  color: var(--White);
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+}
+.div-1 img {
+  border: 2px solid violet;
+}
+
+.div-2 {
+  grid-area: two;
+  background-color: var(--Very-dark-grayish-blue);
+  color: var(--White);
+}
+.div-3 {
+  grid-area: three;
+  background-color: var(--White);
+  color: #000;
+}
+.div-3 blockquote:nth-child(2){
+  margin: 0.625rem 0;
+}
+.div-3 blockquote:nth-child(3) {
+  font-size: 0.75rem;
+  color: var(--Firefly);
+}
+.div-4 {
+  grid-area: four;
+  background-color: var(--White);
+  color: #000;
+}
+.div-4 blockquote:nth-child(3) {
+  font-size: 0.75rem;
+  color: var(--Firefly);
+}
+.div-5 {
+  grid-area: five;
+  background-color: var(--Firefly);
+  color: var(--White);
+}
+.div-5 img {
+  border: 2px solid var(--Moderate-violet);
+}
+
+.personal-info {
+  display: flex;
+}
+
+.name {
+  line-height: 15px;
+}
+.name p {
+  font-size: 0.75rem;
+}
+.name p span {
+  font-size: 0.688rem;
+}
+.bold-p {
+  font-size: 1.25rem;
+  line-height:1.563rem;
+}
+
+.div-1,
+.div-2,
+.div-3,
+.div-4,
+.div-5 {
+  border-radius: 8px;
+  padding: 1.563rem 2.188rem 2.188rem 1.563rem ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.div-1 span,
+.div-2 span,
+.div-3 span,
+.div-4 span,
+.div-5 span {
+  opacity: 0.5;
+}
+.div-1 blockquote:nth-child(3),
+.div-2 blockquote:nth-child(3),
+.div-3 blockquote:nth-child(3),
+.div-4 blockquote:nth-child(3),
+.div-5 blockquote:nth-child(3) {
+  opacity: 0.7;
+  font-size: 0.813rem;
+}
+@media (min-width: 250px) and (max-width: 320px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 2090px;
+    margin: 1.875rem 0;
+  }
+  .div-1,
+  .div-2,
+  .div-3,
+  .div-4,
+  .div-5 {
+    padding: 1.25rem;
+  }
+  .bold-p {
+    font-size: 1rem;
+    margin: 0.625rem 0;
+  }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 1850px;
+    margin: 1.875rem 0;
+  }
+  .div-1,
+  .div-2,
+  .div-3,
+  .div-4,
+  .div-5 {
+    padding: 1.563rem;
+  }
+  .bold-p {
+    font-size: 1.125rem;
+    margin: 0.625rem 0;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 1550px;
+    margin: 1.875rem 0;
+  }
+  .div-1,
+  .div-2,
+  .div-3,
+  .div-4,
+  .div-5 {
+    padding: 1.875rem;
+  }
+  .bold-p {
+    font-size: 1.25rem;
+    margin: 0.625rem 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    width: 750px;
+    grid-template-columns: repeat(4, 180px);
+    grid-template-rows: 250px 240px;
+    gap: 20px;
+  }
+  .div-1,
+  .div-2,
+  .div-3,
+  .div-4,
+  .div-5 {
+    padding: 1.25rem;
+  }
+  .bold-p {
+    font-size: 1rem;
+    margin: 0.313rem 0;
+  }
+  .div-1 blockquote:nth-child(3),
+  .div-2 blockquote:nth-child(3),
+  .div-3 blockquote:nth-child(3),
+  .div-4 blockquote:nth-child(3),
+  .div-5 blockquote:nth-child(3) {
+    font-size: 0.625rem;
+  }
+}
